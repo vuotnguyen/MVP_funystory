@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MVP_funystory</string>
+    <string name="content">Tác phẩm sanh cổ Tiên lão giáng trần được đưa về vườn nhà anh Phan Văn Toàn – Toàn đô la (TP. Việt Trì, Phú Thọ) trong sự hân hoan, vui sướng của chủ nhân cũng như những người yêu cây cảnh miền Bắc. Được biết, anh Toàn mới mua cây sanh cổ này với giá 28 tỷ đồng. Theo anh Toàn, để sở hữu “báu vật” này rất khó khăn vì cây đã qua nhiều đời chủ và được nhiều người săn đón. “Trước tôi theo đuổi không được, cuối cùng chấp nhận cái giá 28 tỷ để đưa “cụ” về vườn. Nếu chủ nhân đòi hơn tôi vẫn mua vì tác phẩm này rất quý, già, thế cây rất đẹp”, chủ nhân tác phẩm nói.</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+</resources>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#CB283593"
+    android:layout_margin="5dp"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_menu_book_24"
+        tools:ignore="MissingConstraints" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imageView">
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thám tử Conan"
+            android:textColor="#F9A825"
+            android:textSize="16dp" />
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_chuong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chương 380"
+                android:textColor="@color/text_color"
+                android:textSize="14dp" />
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" - Tác giả: Tokuda"
+                android:textColor="@color/text_color"
+                android:textSize="14dp" />
+        </TableRow>
+        <TextView
+            android:id="@+id/tv_dateMo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày cập nhật: 05-10-2020"
+            android:textColor="@color/text_color"
+            android:textSize="14dp" />
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#A61C4B60"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/action_bar_custom"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_Avatar_User"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp" />
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/tv_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFB600"
+        android:textSize="18dp"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
+        android:text="     Thông tin"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/tv_sendMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFB600"
+        android:textSize="18dp"
+        android:drawableLeft="@drawable/ic_baseline_message_24"
+        android:text="     Gửi mail yêu cầu trợ giúp"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/tv_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFB600"
+        android:textSize="18dp"
+        android:drawableLeft="@drawable/ic_baseline_stars_24"
+        android:text="     Đánh giá ứng dụng"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/tv_use"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFB600"
+        android:textSize="18dp"
+        android:drawableLeft="@drawable/ic_baseline_menu_book_24"
+        android:text="     Hướng dẫn sử dụng"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/tv_install"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFB600"
+        android:textSize="18dp"
+        android:drawableLeft="@drawable/ic_baseline_delete_24"
+        android:text="     Gỡ app"/>
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/tv_signIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FFB600"
+        android:textSize="18dp"
+        android:drawableLeft="@drawable/ic_baseline_exit_to_app_24"
+        android:text="     Đăng Xuất"/>
+</LinearLayout>

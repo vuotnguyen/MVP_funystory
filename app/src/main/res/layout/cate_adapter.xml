@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:background="#502BA6"
+        android:id="@+id/tv_nameCate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Việt Nam"
+        android:padding="10dp"
+        android:textColor="#FF8F00"
+        android:textSize="18dp"
+        android:textAlignment="center" />
+
+</LinearLayout>

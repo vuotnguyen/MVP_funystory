@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_login" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:orientation="vertical"
+        android:background="@color/bg_login">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logo" />
+
+        <EditText
+            android:id="@+id/edtUserLogin"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:hint="   Username"
+            android:textColorHint="@color/color_hint"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_login"/>
+
+        <EditText
+            android:id="@+id/edtPhone"
+            android:drawableLeft="@drawable/ic_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_login"
+            android:inputType="text"
+            android:textColorHint="@color/color_hint"
+            android:hint="   Phone"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_login"/>
+        <EditText
+            android:id="@+id/edtPassLogin"
+            android:drawableLeft="@drawable/ic_lock_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_login"
+            android:inputType="textPassword"
+            android:textColorHint="@color/color_hint"
+            android:hint="   Password"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_login"/>
+        <EditText
+            android:id="@+id/edtRePass"
+            android:drawableLeft="@drawable/ic_lock_white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_login"
+            android:inputType="textPassword"
+            android:textColorHint="@color/color_hint"
+            android:hint="   Confirm Password"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/text_size_login"/>
+
+        <Button
+            android:id="@+id/btSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bt_radius"
+            android:text="Register"
+            android:textSize="20dp"
+            android:textColor="@color/text_color"
+            android:layout_marginTop="@dimen/margin_top_login"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_top_login"
+            android:text="Fast sign up with your google account "
+            android:textColor="@color/text_color" />
+    </LinearLayout>
+
+</FrameLayout>

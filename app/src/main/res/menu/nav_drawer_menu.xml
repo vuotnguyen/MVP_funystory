@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/insert_story"
+        android:title="Thêm Truyện" />
+
+    <item
+        android:id="@+id/update_story"
+        android:title="Sửa truyện" />
+
+    <item
+        android:id="@+id/del_story"
+        android:title="Xóa Truyện" />
+</menu>

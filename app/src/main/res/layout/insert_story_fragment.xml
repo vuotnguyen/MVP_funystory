@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm Truyện"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:textColor="@color/text_black"
+        android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên Truyện"
+        android:textSize="16dp"
+        android:textColor="@color/text_black"
+        android:layout_margin="10dp"/>
+    <EditText
+        android:id="@+id/edt_nameSto"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/text_black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Tên truyện"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên tác giả"
+        android:textSize="16dp"
+        android:textColor="@color/text_black"
+        android:layout_margin="10dp"/>
+    <EditText
+        android:id="@+id/edt_author"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/text_black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Tên tác giả"/>
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Thể loại"
+            android:textSize="16dp"
+            android:textColor="@color/text_black"
+            android:layout_margin="10dp"/>
+        <Spinner
+            android:layout_weight="1"
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Số chương"
+            android:textSize="16dp"
+            android:textColor="@color/text_black"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/edt_totalChapter"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Tên tác giả"/>
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ngày up truyện"
+            android:textSize="16dp"
+            android:textColor="@color/text_black"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/edt_chooseDate"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/text_black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Ngày cập nhật"/>
+
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Trạng thái"
+            android:textSize="16dp"
+            android:textColor="@color/text_black"
+            android:layout_margin="10dp"/>
+        <RadioGroup
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đã hoàn thành"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đang cập nhật"/>
+
+
+        </RadioGroup>
+
+
+    </TableRow>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mô tả"
+        android:textSize="16dp"
+        android:textColor="@color/text_black"
+        android:layout_marginLeft="10dp"/>
+    <EditText
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="@color/text_black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="mota"/>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/edt_avartar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chọn Avartar"
+            android:textSize="16dp"
+            android:textColor="@color/text_black"
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/edtAvarta"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:layout_weight="1"
+            android:textColor="#EA0C0C"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="avatar path"/>
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:background="@color/colorPrimaryDark"
+            android:layout_marginRight="30dp"
+            android:id="@+id/button"
+            android:layout_weight="1"
+            android:textColor="@color/text_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quay lại" />
+
+        <Button
+            android:textColor="@color/text_color"
+            android:background="@color/colorPrimaryDark"
+            android:layout_weight="1"
+            android:id="@+id/button2"
+            android:layout_marginLeft="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thêm Mới" />
+    </TableRow>
+
+
+</LinearLayout>
