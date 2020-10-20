@@ -101,14 +101,14 @@ public class HomeDAOFragment extends BaseFragment<HomePresenter> implements Call
 
     }
 
-    @Override
-    public void deleteStory(CategoryStories categorystories) {
-
-    }
-
-    @Override
-    public void deleteStoryByID(CategoryStories id) {
-    }
+//    @Override
+//    public void deleteStory(CategoryStories categorystories) {
+//
+//    }
+//
+//    @Override
+//    public void deleteStoryByID(CategoryStories id) {
+//    }
 
     @Override
     public void gotoStory(int id) {

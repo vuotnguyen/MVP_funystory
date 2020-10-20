@@ -35,6 +35,9 @@ public class StoryPresenter extends BasePresenter<CallStoryDAO> {
     public CategoryStories geCSByID(int id){
         return App.getInstance().getAppDB().getCallStoryDAO().getCS(id);
     }
+    public boolean delStoryByID(int id){
+        return App.getInstance().getAppDB().getCallStoryDAO().deleteStoryByID(id);
+    }
     public Bitmap getBitmapImage(Context context,int idStory){
         Bitmap bm = null;
         try {

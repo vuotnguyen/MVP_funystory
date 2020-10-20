@@ -137,10 +137,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <RadioButton
+                android:id="@+id/rb_done"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Đã hoàn thành"/>
             <RadioButton
+                android:id="@+id/rb_update"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Đang cập nhật"/>
@@ -160,6 +162,7 @@
         android:textColor="@color/text_black"
         android:layout_marginLeft="10dp"/>
     <EditText
+        android:id="@+id/edt_mota"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -205,7 +208,7 @@
         <Button
             android:background="@color/colorPrimaryDark"
             android:layout_marginRight="30dp"
-            android:id="@+id/button"
+            android:id="@+id/back"
             android:layout_weight="1"
             android:textColor="@color/text_color"
             android:layout_width="match_parent"
@@ -213,10 +216,11 @@
             android:text="Quay lại" />
 
         <Button
+
             android:textColor="@color/text_color"
             android:background="@color/colorPrimaryDark"
             android:layout_weight="1"
-            android:id="@+id/button2"
+            android:id="@+id/bt_add"
             android:layout_marginLeft="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

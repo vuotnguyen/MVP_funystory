@@ -21,8 +21,10 @@ public interface CallHomeDAO extends CallBack {
     void insertStory(CategoryStories categorystories);
 
     @Delete
-    void deleteStory(CategoryStories categorystories);
+    default void deleteStory(CategoryStories categorystories){}
 
     @Delete
-    void deleteStoryByID(CategoryStories id);
+    default boolean deleteStoryCateByID(int id){
+        return true;
+    }
 }
