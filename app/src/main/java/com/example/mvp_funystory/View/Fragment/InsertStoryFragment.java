@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mvp_funystory.CallBackPresenter.CallInsertStory;
 import com.example.mvp_funystory.DAO.CallCategoryDAO;
@@ -50,12 +51,12 @@ public class InsertStoryFragment extends BaseFragment<InsertStoryPresenter> impl
 
     @Override
     protected void initView() {
-        deleteStoryByID(6);
-        deleteStoryByID(7);
-        deleteStoryByID(8);
-        deleteStoryCateByID(6);
-        deleteStoryCateByID(7);
-        deleteStoryCateByID(8);
+//        deleteStoryByID(getStoryByID(6));
+//        deleteStoryByID(getStoryByID(7));
+//        deleteStoryByID(getStoryByID(8));
+//        deleteStoryCateByID(getCateStoriByID(6));
+//        deleteStoryCateByID(getCateStoriByID(7));
+//        deleteStoryCateByID(getCateStoriByID(8));
 
         listCate = new ArrayList<>();
         for (int i = 0; i < getALlStory().size() - 1; i++) {
@@ -141,17 +142,28 @@ public class InsertStoryFragment extends BaseFragment<InsertStoryPresenter> impl
                 getStorage().setTagFrag(TAG);
                 break;
             case R.id.bt_add:
+                getInfor();
                 insertStory(new CategoryStories(getAllCateStori().size()+2,idCate,name,chapter,author,date));
                 insertStory(new Story(getAllCateStori().size()+2,getAllCateStori().size()+2,getAllCateStori().size()+2,
                         date,avatar,date,status,linkMota));
+                Toast.makeText(context,"Thêm Thành công",Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+    private void getInfor(){
+        name = edtNameSto.getText().toString();
+        author = edtAuthor.getText().toString();
+        date = edtDate.getText().toString();
+        chapter = Integer.parseInt(edtTotalChapte.getText().toString());
+        avatar = edtAvatar.getText().toString();
+        linkMota = edtMoTa.getText().toString();
     }
 
     @Override
     public List<Categories> getALlStory() {
         return new CategoryPresenter(this).getAllCategory();
     }
+
 
     @Override
     public List<CategoryStories> getAllCateStori() {
@@ -161,18 +173,18 @@ public class InsertStoryFragment extends BaseFragment<InsertStoryPresenter> impl
 
     @Override
     public void insertStory(CategoryStories categorystories) {
-        name = edtNameSto.getText().toString();
-        author = edtAuthor.getText().toString();
-        date = edtDate.getText().toString();
-        chapter = Integer.parseInt(edtTotalChapte.getText().toString());
-        avatar = edtAvatar.getText().toString();
-        linkMota = edtMoTa.getText().toString();
+
         new HomePresenter(this).insertStory(categorystories);
     }
 
     @Override
-    public boolean deleteStoryCateByID(int id) {
-        return new HomePresenter(this).deleteStory(id);
+    public CategoryStories getCateStoriByID(int id) {
+        return new HomePresenter(this).getCateStoriByID(id);
+    }
+
+    @Override
+    public void deleteStoryCateByID(CategoryStories categoryStories) {
+         new HomePresenter(this).deleteStory(categoryStories);
     }
 
     @Override
@@ -181,7 +193,18 @@ public class InsertStoryFragment extends BaseFragment<InsertStoryPresenter> impl
     }
 
     @Override
-    public boolean deleteStoryByID(int id) {
-        return new StoryPresenter(this).delStoryByID(id);
+    public CategoryStories getCS(int id) {
+        return null;
     }
+
+    @Override
+    public Story getStoryByID(int id) {
+        return new StoryPresenter(this).getStoryByID(id);
+    }
+
+    @Override
+    public boolean deleteStoryByID(Story story) {
+        return new StoryPresenter(this).delStoryByID(story);
+    }
+
 }

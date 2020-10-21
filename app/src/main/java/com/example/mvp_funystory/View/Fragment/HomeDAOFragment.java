@@ -1,10 +1,14 @@
 package com.example.mvp_funystory.View.Fragment;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +31,7 @@ public class HomeDAOFragment extends BaseFragment<HomePresenter> implements Call
     private ImageView imgDrawer;
     public static final String TAG = HomeDAOFragment.class.getName();
     public static final String KEY_SHOW_HOME = "KEY_SHOW_HOME";
+    private int status;
 
 
     @Override
@@ -43,11 +48,14 @@ public class HomeDAOFragment extends BaseFragment<HomePresenter> implements Call
 //        getMpresenter().insertStory(new CategoryStories(5,5,"Doremon",134,"tokuda mazawa","10-06-2020"));
 
 
+        status = getStorage().getStatus();
+
+
         imgDrawer = findViewById(R.id.imgDrawerMenu,this);
 
         rv_listStory = findViewById(R.id.rv_allStory);
         rv_listStory.setLayoutManager(new LinearLayoutManager(getContext()));
-        CategoryStoriesAdapter adapter = new CategoryStoriesAdapter(getContext(),getAllCateStori(),this);
+        CategoryStoriesAdapter adapter = new CategoryStoriesAdapter(getContext(),getAllCateStori(),this,status);
         rv_listStory.setAdapter(adapter);
         adapter.setEven(this);
     }
@@ -61,7 +69,10 @@ public class HomeDAOFragment extends BaseFragment<HomePresenter> implements Call
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.imgDrawerMenu:
-                showPopUpMenu();
+                if(status == 0){
+                    showPopUpMenu();
+                }
+
         }
     }
 
@@ -100,20 +111,21 @@ public class HomeDAOFragment extends BaseFragment<HomePresenter> implements Call
     public void insertStory(CategoryStories categorystories) {
 
     }
+    @Override
+    public void deleteStoryCateByID(CategoryStories categoryStories) {
+        storiesList.remove(categoryStories);
+        getMpresenter().deleteStory(categoryStories);
 
-//    @Override
-//    public void deleteStory(CategoryStories categorystories) {
-//
-//    }
-//
-//    @Override
-//    public void deleteStoryByID(CategoryStories id) {
-//    }
-
+        Toast.makeText(context,"deleteStoryCateByID: Xóa thành công",Toast.LENGTH_SHORT).show();
+    }
     @Override
     public void gotoStory(int id) {
         even.callBack(KEY_SHOW_STORY,null);
         getStorage().setIdStory(id);
     }
 
+    @Override
+    public void onAttachFragment(@NonNull Fragment childFragment) {
+        super.onAttachFragment(childFragment);
+    }
 }

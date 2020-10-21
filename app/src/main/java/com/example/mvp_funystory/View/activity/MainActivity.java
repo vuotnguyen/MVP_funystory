@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +44,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements CallBack, View.OnClickListener {
     private String currenTag;
     private BottomNavigationView botomMenu;
+    private boolean doubleBackToExitPressedOnce;
 //    private DrawerLayout drawerLayout;
 //    private ActionBarDrawerToggle drawerToggle;
 
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements CallBack, View.On
     }
 
     private void initView() {
+        doubleBackToExitPressedOnce = false;
 
 //        drawerLayout = findViewById(R.id.ln_main);
 
@@ -71,28 +74,30 @@ public class MainActivity extends AppCompatActivity implements CallBack, View.On
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.navigation_home:
-                        showFragment(HomeDAOFragment.TAG);
+                        addFragment(HomeDAOFragment.TAG);
+                        botomMenu.setVisibility(View.VISIBLE);
                         return true;
                     case R.id.navigation_theLoai:
-                        showFragment(CategoryDAOFragment.TAG);
+                        addFragment(CategoryDAOFragment.TAG);
 
                         return true;
                     case R.id.navigation_library:
-                        showFragment(LibraryFragment.TAG);
+                        addFragment(LibraryFragment.TAG);
 
                         return true;
                     case R.id.navigation_congDong:
-                        showFragment(CommunityFragment.TAG);
+                        addFragment(CommunityFragment.TAG);
 
                         return true;
                     case R.id.navigation_caNhan:
-                        showFragment(PersonalFragment.TAG);
+                        addFragment(PersonalFragment.TAG);
                         return true;
                 }
                 return false;
             }
         });
-        showFragment(HomeDAOFragment.TAG);
+        addFragment(HomeDAOFragment.TAG);
+
     }
 
     public void showFragment(String tag) {
@@ -111,6 +116,40 @@ public class MainActivity extends AppCompatActivity implements CallBack, View.On
             e.printStackTrace();
         }
     }
+    public void addFragment(String tag) {
+        try {
+            Class<?> clazz = Class.forName(tag);
+            BaseFragment baseFragment = (BaseFragment) clazz.newInstance();
+            baseFragment.setCallBack(this);
+            currenTag = tag;
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction transaction =fragmentManager.beginTransaction();
+            transaction.replace(R.id.ln_main,baseFragment,tag).commit();
+            transaction.commit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+//    @Override
+//    public void onBackPressed() {
+//        if (doubleBackToExitPressedOnce) {
+//            super.onBackPressed();
+//            return;
+//        }
+//        this.doubleBackToExitPressedOnce = true;
+//
+//        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+//        new Handler().postDelayed(new Runnable() {
+//
+//            @Override
+//            public void run() {
+//                doubleBackToExitPressedOnce=false;
+//            }
+//        }, 2000);
+//    }
+
 
     @Override
     public void onBackPressed() {
@@ -122,15 +161,15 @@ public class MainActivity extends AppCompatActivity implements CallBack, View.On
         switch (key){
             case HomeDAOFragment.KEY_SHOW_STORY:
                 showFragment(StoryFragment.TAG);
-                botomMenu.setVisibility(View.GONE);
+                botomMenu.setVisibility(View.INVISIBLE);
                 break;
             case ToTalChapterFragment.KEY_SHOW_CHAPTER:
                 showFragment(ToTalChapterFragment.TAG);
-                botomMenu.setVisibility(View.GONE);
+                botomMenu.setVisibility(View.INVISIBLE);
                 break;
             case StoryByCateFragment.KEY_SHOW_BYCATE:
                 showFragment(StoryByCateFragment.TAG);
-                botomMenu.setVisibility(View.GONE);
+                botomMenu.setVisibility(View.INVISIBLE);
                 break;
             case MenuDrawerFragment.KEY_SHOW_DRAWER:
                 showFragment(MenuDrawerFragment.TAG);
@@ -143,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements CallBack, View.On
                 break;
             case HomeDAOFragment.KEY_SHOW_INSERT:
                 showFragment(InsertStoryFragment.TAG);
-                botomMenu.setVisibility(View.GONE);
+                botomMenu.setVisibility(View.INVISIBLE);
                 break;
         }
     }
@@ -156,6 +195,8 @@ public class MainActivity extends AppCompatActivity implements CallBack, View.On
     public void onClick(View v) {
         Toast.makeText(this,"Home",Toast.LENGTH_SHORT).show();
     }
+
+
 
 //    @Override
 //    public boolean onOptionsItemSelected(@NonNull MenuItem item) {

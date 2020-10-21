@@ -26,8 +26,11 @@ public class HomePresenter extends BasePresenter<CallHomeDAO> {
         return null;
     }
 
-    public boolean deleteStory(int id){
-        return App.getInstance().getAppDB().getStoryDAO().deleteStoryCateByID(id);
+    public void deleteStory(CategoryStories categoryStories){
+        App.getInstance().getAppDB().getStoryDAO().deleteStoryCateByID(categoryStories);
+    }
+    public CategoryStories getCateStoriByID(int id){
+        return App.getInstance().getAppDB().getStoryDAO().getCateStoriByID(id);
     }
 
 

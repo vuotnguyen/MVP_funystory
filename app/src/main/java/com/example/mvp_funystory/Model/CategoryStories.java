@@ -3,11 +3,13 @@ package com.example.mvp_funystory.Model;
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 
 @Entity(primaryKeys ={"id"})
 public class CategoryStories {
 
+//    @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "id")
     private int id;
@@ -16,14 +18,11 @@ public class CategoryStories {
     @ColumnInfo(name = "category_id")
     private int category_id;
 
-
     @ColumnInfo(name = "story_name")
     private String story_name;
 
-
     @ColumnInfo(name = "total_chapter")
     private int total_chapter;
-
 
     @ColumnInfo(name = "author")
     private String author;
@@ -82,7 +81,7 @@ public class CategoryStories {
         this.modified_date = modified_date;
     }
 
-    public CategoryStories(int id, int category_id, String story_name, int total_chapter, String author, String modified_date) {
+    public CategoryStories(int id,int category_id, String story_name, int total_chapter, String author, String modified_date) {
         this.id = id;
         this.category_id = category_id;
         this.story_name = story_name;

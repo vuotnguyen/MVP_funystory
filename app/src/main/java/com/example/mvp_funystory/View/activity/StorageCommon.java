@@ -13,6 +13,15 @@ public final class StorageCommon {
     private String sendBM;
     private List<Categories> listCate;
     private String tagFrag;
+    private int status;
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
     public String getTagFrag() {
         return tagFrag;

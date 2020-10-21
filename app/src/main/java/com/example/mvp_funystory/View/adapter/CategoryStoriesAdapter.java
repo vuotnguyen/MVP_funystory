@@ -23,16 +23,19 @@ public class CategoryStoriesAdapter extends RecyclerView.Adapter<CategoryStories
     private List<CategoryStories> listStory;
     private CallHomeDAO even;
     private CallStoryByCateDAO even1;
+    private int status;
 
-    public CategoryStoriesAdapter(Context context, List<CategoryStories> listStory,CallHomeDAO even) {
+    public CategoryStoriesAdapter(Context context, List<CategoryStories> listStory,CallHomeDAO even,int status) {
             this.context = context;
         this.listStory = listStory;
         this.even = even;
+        this.status = status;
     }
-    public CategoryStoriesAdapter(Context context, List<CategoryStories> listStory,CallStoryByCateDAO even1) {
+    public CategoryStoriesAdapter(Context context, List<CategoryStories> listStory,CallStoryByCateDAO even1,int status) {
         this.context = context;
         this.listStory = listStory;
         this.even1 = even1;
+        this.status = status;
     }
 
     public void setEven(CallHomeDAO even) {
@@ -54,19 +57,31 @@ public class CategoryStoriesAdapter extends RecyclerView.Adapter<CategoryStories
         holder.tv_chuong.setText("Chương: "+categorystories.getTotal_chapter());
         holder.tv_author.setText("Tác Giả: "+categorystories.getAuthor());
         holder.tv_dateMo.setText("NGày cập nhật: "+categorystories.getModified_date());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(even != null){
-                    even.gotoStory(categorystories.getId());
+        if(status == 1){
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(even != null){
+                        even.gotoStory(categorystories.getId());
+                    }
+                    if(even1!= null){
+                        even1.gotoStory(categorystories.getId());
+                    }
                 }
-                if(even1!= null){
-                    even1.gotoStory(categorystories.getId());
+            });
+        }
+        if(status == 0){
+            holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    even.deleteStoryCateByID(categorystories);
+                    notifyDataSetChanged();
+                    return true;
                 }
+            });
 
+        }
 
-            }
-        });
     }
 
 

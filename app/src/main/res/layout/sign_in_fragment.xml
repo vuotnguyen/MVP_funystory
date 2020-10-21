@@ -25,7 +25,7 @@
             android:layout_marginTop="20dp"
             android:src="@drawable/logo" />
         <EditText
-            android:text="admin"
+
             android:id="@+id/edtUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             android:textSize="@dimen/text_size_login"/>
 
         <EditText
-            android:text="admin"
+
             android:id="@+id/edtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,6 +47,14 @@
             android:hint="   Password"
             android:textColor="@color/text_color"
             android:textSize="@dimen/text_size_login"/>
+
+        <CheckBox
+            android:id="@+id/cb_remember"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lưu đăng nhập"
+            android:textColor="@color/text_color"/>
         <Button
             android:id="@+id/btSignIn"
             android:layout_width="match_parent"

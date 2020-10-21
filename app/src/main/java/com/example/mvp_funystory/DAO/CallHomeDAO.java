@@ -17,6 +17,11 @@ public interface CallHomeDAO extends CallBack {
     @Query("SELECT * FROM CategoryStories")
     List<CategoryStories> getAllCateStori();
 
+    @Query("select * from CategoryStories where id = :id")
+    default CategoryStories getCateStoriByID(int id){
+        return null;
+    }
+
     @Insert
     void insertStory(CategoryStories categorystories);
 
@@ -24,7 +29,5 @@ public interface CallHomeDAO extends CallBack {
     default void deleteStory(CategoryStories categorystories){}
 
     @Delete
-    default boolean deleteStoryCateByID(int id){
-        return true;
-    }
+    void deleteStoryCateByID(CategoryStories categoryStories);
 }

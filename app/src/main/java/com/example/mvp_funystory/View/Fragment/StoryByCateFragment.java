@@ -36,7 +36,7 @@ public class StoryByCateFragment extends BaseFragment<StoryByCatePresenter> impl
 
         rvStoryByCate = findViewById(R.id.rv_storyByCate);
         rvStoryByCate.setLayoutManager(new LinearLayoutManager(context));
-        adapter = new CategoryStoriesAdapter(context,listByCate,this);
+        adapter = new CategoryStoriesAdapter(context,listByCate,this,getStorage().getStatus());
         rvStoryByCate.setAdapter(adapter);
         Log.i("TAG", "initView: "+listByCate.size());
     }

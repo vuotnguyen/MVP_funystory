@@ -13,9 +13,7 @@ import com.example.mvp_funystory.View.CallBack.CallBack;
 @Dao
 public interface CallStoryDAO extends CallBack {
     @Query("SELECT * FROM Story WHERE id = :id")
-    default Story getStoryByID(int id){
-        return null;
-    }
+    Story getStoryByID(int id);
 
     @Query("UPDATE Story SET image_url = :url AND content_introduce = :content WHERE id = :id  ")
     default  void upDateDATA(String url,String content, int id){}
@@ -24,16 +22,14 @@ public interface CallStoryDAO extends CallBack {
     void insertStory(Story story);
 
     @Query("SELECT * FROM CategoryStories WHERE id = :id")
-    default CategoryStories getCS(int id){
-        return null;
-    }
+    CategoryStories getCS(int id);
 
     @Query("SELECT ca.category_name FROM Categories ca WhERE id = :id")
     default String getNameCATE(int id){
         return null;
     }
     @Delete
-    default boolean deleteStoryByID(int id){
+    default boolean deleteStoryByID(Story story){
         return true;
     }
 }

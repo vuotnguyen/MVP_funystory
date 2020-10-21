@@ -68,6 +68,6 @@ public class Activity_Login extends AppCompatActivity implements CallBack {
 
     @Override
     public void destroyLogin() {
-        onStop();
+        finish();
     }
 }

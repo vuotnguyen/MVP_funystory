@@ -62,6 +62,8 @@ public class ChooseImagesFragment extends BaseFragment<ChooseImagePresenter> imp
                     editor.putString(PersonalFragment.KEY_PATH, bm);
                     editor.commit();
                     even.callBack(PersonalFragment.KEY_SHOW_PERSONAL,null);
+                    getChildFragmentManager().isDestroyed();
+                    //hủy fragment
                 }
                 if(tagFrag.equals(InsertStoryFragment.TAG)){
                     getStorage().setSendBM(bm);
