@@ -13,6 +13,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public class StoryPresenter extends BasePresenter<CallStoryDAO> {
     private InputStream in;
@@ -56,7 +57,7 @@ public class StoryPresenter extends BasePresenter<CallStoryDAO> {
         StringBuilder text = new StringBuilder();
         try {
             in = context.getAssets().open(getStoryByID(id).content_introduce);
-            BufferedReader buff = new BufferedReader(new InputStreamReader(in,"UTF8"));
+            BufferedReader buff = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
 
             String line = buff.readLine();
 

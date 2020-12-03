@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public class StoryContentPresenter extends BasePresenter<CallStoryContent> {
     private InputStream in;
@@ -27,7 +28,7 @@ public class StoryContentPresenter extends BasePresenter<CallStoryContent> {
         StringBuilder rs = new StringBuilder();
         try {
            in = context.getAssets().open(getStoryContent(chapter).story_content);
-            BufferedReader buff = new BufferedReader(new InputStreamReader(in,"UTF8"));
+            BufferedReader buff = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
             String line = buff.readLine();
             while (line != null){
                 rs.append(line+"\n");

@@ -47,8 +47,7 @@ public class ChooseImagesFragment extends BaseFragment<ChooseImagePresenter> imp
         asynTask = new LoadImageAsynTask();
         asynTask.execute();
     }
-
-
+    
     private void loadRV(List<String> list){
         adapter = new ImageAdapter(getContext(),list,this);
         rvImages.setAdapter(adapter);
